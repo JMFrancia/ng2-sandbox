@@ -1,0 +1,12 @@
+<span *ngFor='let option of options;let last = last'>
+  <span
+    (click)="selectOption(option)"
+    [style.fontWeight]="option == selected ? 'bold' : ''"
+    [style.font-style]="option.disabled ? 'italic' : ''"
+  >
+    {{option.name}}
+  </span>
+  <span *ngIf="!last">
+    >
+  </span>
+</span>

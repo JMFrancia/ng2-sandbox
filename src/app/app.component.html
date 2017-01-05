@@ -1,3 +1,11 @@
-<h1>
-  {{title}}
-</h1>
+<h1>Breadcrumb</h1>
+
+<app-breadcrumb
+  [options]="[
+    {name: 'Option 1', disabled: false},
+    {name: 'Option 2', disabled: false},
+    {name: 'Option 3', disabled: true}
+  ]"
+  [selectedIndex]="0"
+  (selectionMade)="logOutput($event)"
+></app-breadcrumb>
