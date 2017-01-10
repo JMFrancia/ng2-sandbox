@@ -6,12 +6,15 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
+import { Ng2Bs3ModalModule } from './ng2-bs3-modal/ng2-bs3-modal';
+
 @NgModule({
   declarations: [
     AppComponent,
     BreadcrumbComponent
   ],
   imports: [
+    Ng2Bs3ModalModule,
     BrowserModule,
     FormsModule,
     HttpModule
