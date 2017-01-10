@@ -23,9 +23,18 @@
   ></app-breadcrumb>
   <h1>Modal</h1>
   <button type="button" class="btn btn-default" (click)="modal.open()">Open me!</button>
-  <modal #modal>
+  <modal #modal
+  >
       <modal-header [show-close]="true">
-          <h4 class="modal-title">I'm a modal!</h4>
+        <app-breadcrumb
+          [options]="[
+            {name: 'Option 1', disabled: false},
+            {name: 'Option 2', disabled: false},
+            {name: 'Option 3', disabled: true}
+          ]"
+          [selectedIndex]="0"
+          (selectionMade)="logOutput($event)"
+        ></app-breadcrumb>
       </modal-header>
       <modal-body>
           Hello World!

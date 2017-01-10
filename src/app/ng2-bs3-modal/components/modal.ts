@@ -1,4 +1,4 @@
-import { Component, OnDestroy, Input, Output, EventEmitter, Type, ElementRef, HostBinding, Inject } from '@angular/core';
+import { Component, OnDestroy, OnInit, Input, Output, EventEmitter, Type, ElementRef, HostBinding, Inject } from '@angular/core';
 import { ModalInstance, ModalResult } from './modal-instance';
 
 @Component({
@@ -16,17 +16,20 @@ import { ModalInstance, ModalResult } from './modal-instance';
         </div>
     `
 })
-export class ModalComponent implements OnDestroy {
+export class ModalComponent implements OnDestroy, OnInit {
 
     private overrideSize: string = null;
 
     instance: ModalInstance;
     visible: boolean = false;
+    elementReference: ElementRef;
 
     @Input() animation: boolean = true;
     @Input() backdrop: string | boolean = true;
     @Input() keyboard: boolean = true;
     @Input() size: string;
+    @Input() width: number;
+    @Input() height: number;
     @Input() cssClass: string = '';
 
     @Output() onClose: EventEmitter<any> = new EventEmitter(false);
@@ -46,6 +49,7 @@ export class ModalComponent implements OnDestroy {
     }
 
     constructor(private element: ElementRef) {
+        this.elementReference = this.element;
         this.instance = new ModalInstance(this.element);
 
         this.instance.hidden.subscribe((result) => {
@@ -58,6 +62,11 @@ export class ModalComponent implements OnDestroy {
         this.instance.shown.subscribe(() => {
             this.onOpen.emit(undefined);
         });
+    }
+
+    ngOnInit() {
+      this.elementReference.nativeElement.style.width = this.width ? this.width + 'px': '';
+      this.elementReference.nativeElement.style.height = this.height ? this.height + 'px': '';
     }
 
     ngOnDestroy() {
@@ -83,6 +92,13 @@ export class ModalComponent implements OnDestroy {
 
     dismiss(): Promise<void> {
         return this.instance.dismiss();
+    }
+
+    getStyleOverride() : string {
+      let result : string = (this.width ? 'width : ' + this.width + ' ' : '') +
+             (this.height ? 'height : ' + this.height : '');
+      console.log("NEW STYLE: " + result);
+      return result;
     }
 
     getCssClasses(): string {
