@@ -23,8 +23,7 @@
   ></app-breadcrumb>
   <h1>Modal</h1>
   <button type="button" class="btn btn-default" (click)="modal.open()">Open me!</button>
-  <modal #modal
-  >
+  <modal #modal>
       <modal-header [show-close]="true">
         <app-breadcrumb
           [options]="[
@@ -37,8 +36,13 @@
         ></app-breadcrumb>
       </modal-header>
       <modal-body>
-          Hello World!
+          <modal-test-form
+            (data)="formText = $event"
+          ></modal-test-form>
       </modal-body>
       <modal-footer [show-default-buttons]="true"></modal-footer>
   </modal>
+  <span>
+    {{formText}}
+  </span>
 </body>

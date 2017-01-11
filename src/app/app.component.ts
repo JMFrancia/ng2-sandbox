@@ -6,9 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  formText : any;
 
   logOutput(output : any) {
+    console.log("LOGGING");
     console.log(output);
   }
 }

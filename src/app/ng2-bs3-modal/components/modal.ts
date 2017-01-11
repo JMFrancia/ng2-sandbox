@@ -36,6 +36,8 @@ export class ModalComponent implements OnDestroy, OnInit {
     @Output() onDismiss: EventEmitter<any> = new EventEmitter(false);
     @Output() onOpen: EventEmitter<any> = new EventEmitter(false);
 
+    @Output() data : any = new EventEmitter();
+
     @HostBinding('class.fade') get fadeClass(): boolean {
         return this.animation;
     }
