@@ -10,20 +10,24 @@ import { ModalGeneratorService } from './modal-generator.service'
   providers: [ ModalGeneratorService ]
 })
 export class AppComponent implements OnInit {
-  @ViewChild('placeHolder', {read: ViewContainerRef}) private _placeHolder: ViewContainerRef;
+  @ViewChild('modalPlaceholder', {read: ViewContainerRef}) private _placeHolder: ViewContainerRef;
 
   formText : any;
 
   constructor(private _mgService: ModalGeneratorService, private _cmpFctryRslvr: ComponentFactoryResolver, private _vcRef: ViewContainerRef) {}
 
   ngOnInit() {
+    //this._mgService.openModal('wizard', this._placeHolder);
+    /*
     this._mgService.generateWizardModal(this._placeHolder);
     this._mgService.attachWizardModalTestFormChangeFunction(event => this.formText = event);
+    */
   }
 
   private openWizardModal() {
-    this._mgService.openWizardModal();
+    this._mgService.openModal('wizard', this._placeHolder);
   }
+
 
   private logOutput(output : any) {
     console.log("App-level logging: " + output);
