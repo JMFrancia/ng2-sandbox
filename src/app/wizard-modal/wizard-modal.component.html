@@ -1,0 +1,20 @@
+<modal #modal
+>
+    <modal-header [show-close]="true">
+      <app-breadcrumb
+        [options]="[
+          {name: 'Option 1', disabled: false},
+          {name: 'Option 2', disabled: false},
+          {name: 'Option 3', disabled: true}
+        ]"
+        [selectedIndex]="0"
+        (selectionMade)="logOutput($event)"
+      ></app-breadcrumb>
+    </modal-header>
+    <modal-body>
+        <modal-test-form
+          (data)="formText = $event"
+        ></modal-test-form>
+    </modal-body>
+    <modal-footer [show-default-buttons]="true"></modal-footer>
+</modal>
