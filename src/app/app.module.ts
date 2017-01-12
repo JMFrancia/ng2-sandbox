@@ -8,12 +8,14 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 import { Ng2Bs3ModalModule } from './ng2-bs3-modal/ng2-bs3-modal';
 import { ModalTestFormComponent } from './modal-test-form/modal-test-form.component';
+import { WizardModalComponent } from './wizard-modal/wizard-modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BreadcrumbComponent,
-    ModalTestFormComponent
+    ModalTestFormComponent,
+    WizardModalComponent
   ],
   imports: [
     Ng2Bs3ModalModule,
@@ -22,6 +24,7 @@ import { ModalTestFormComponent } from './modal-test-form/modal-test-form.compon
     HttpModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ AppComponent, WizardModalComponent ]
 })
 export class AppModule {}
