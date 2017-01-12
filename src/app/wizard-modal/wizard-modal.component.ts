@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewContainerRef, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewContainerRef, ViewChild, ComponentRef } from '@angular/core';
 
 @Component({
   selector: 'wizard-modal',
@@ -7,6 +7,8 @@ import { Component, OnInit, ViewContainerRef, ViewChild } from '@angular/core';
 })
 export class WizardModalComponent implements OnInit {
 @ViewChild('modal') modal;
+@ViewChild('breadcrumb') breadcrumb;
+@ViewChild('testForm') testForm;
 
   constructor() { }
 

@@ -1,6 +1,6 @@
 <modal #modal>
     <modal-header [show-close]="true">
-      <app-breadcrumb
+      <app-breadcrumb #breadcrumb
         [options]="[
           {name: 'Option 1', disabled: false},
           {name: 'Option 2', disabled: false},
@@ -11,7 +11,7 @@
       ></app-breadcrumb>
     </modal-header>
     <modal-body>
-        <modal-test-form
+        <modal-test-form #testForm
           (data)="formText = $event"
         ></modal-test-form>
     </modal-body>
