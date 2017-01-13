@@ -6,9 +6,9 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
-import { Ng2Bs3ModalModule } from './ng2-bs3-modal/ng2-bs3-modal';
+import { Ng2Bs3ModalModule } from './arc-modal/ng2-bs3-modal/ng2-bs3-modal';
 import { ModalTestFormComponent } from './modal-test-form/modal-test-form.component';
-import { WizardModalComponent } from './wizard-modal/wizard-modal.component';
+import { WizardModalComponent } from './arc-modal/wizard-modal/wizard-modal.component';
 
 @NgModule({
   declarations: [
