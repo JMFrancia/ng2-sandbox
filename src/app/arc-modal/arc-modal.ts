@@ -1,6 +1,4 @@
-import { ViewChild, ViewContainerRef, ElementRef,
-         EventEmitter, OnInit, ComponentRef, ComponentFactoryResolver,
-         Component, Type, ReflectiveInjector } from '@angular/core';
+import { ViewContainerRef, ComponentRef } from '@angular/core';
 
 export class ArcModal {
   private viewCRef : ViewContainerRef;
@@ -11,10 +9,19 @@ export class ArcModal {
     this.instance = modal.instance;
   }
 
+  /**
+   * Opens the ArcModal instance
+   */
   public open() {
     this.instance.open();
   }
 
+  /**
+   * Attaches a callback function to an event emitter within a viewChild component in the ArcModal instance
+   * @param  {string}   component Name of the viewchild component
+   * @param  {string}   emitter   Name of the emitter
+   * @param  {Function} callback  The callback function
+   */
   public attachCallback(component : string, emitter : string, callback : Function) {
     if(this.instance[component] == undefined) {
       console.error('Modal does not have a ' + component + ' + component attached');
@@ -27,6 +34,10 @@ export class ArcModal {
     this.instance[component][emitter].subscribe(callback);
   }
 
+  /**
+   * Returns the modal instance
+   * @return {[type]} The modal instance object
+   */
   public getModalInstance() {
     return this.instance;
   }

@@ -12,18 +12,27 @@ export class ModalGeneratorService {
 
   constructor(private _cmpFctryRslvr: ComponentFactoryResolver, private _vcRef: ViewContainerRef) {}
 
-  //Injects a component of type 'type' into the given view container,
-  //and returns a component ref to the new component
-  private createComponent (type : Type<Component>, vCref: ViewContainerRef): ComponentRef<any> {
-    let factory = this._cmpFctryRslvr.resolveComponentFactory(type);
-    // vCref is needed cause of that injector..
-    let injector = ReflectiveInjector.fromResolvedProviders([], vCref.parentInjector);
-    // create component without adding it directly to the DOM
-    let comp = factory.create(injector);
-    return comp;
-  }
+  /**
+   * Generates a component and injects it into a viewContainer
+   * @param  {Type<Component>}   type  Component object from which to generate the new modal
+   * @param  {ViewContainerRef}  vCref The ViewContainerRef into which the modal will be injected
+   * @return {ComponentRef<any>}       ComponentRef to the newly generated modal component
+   */
+   private createComponent (type : Type<Component>, vCref: ViewContainerRef): ComponentRef<any> {
+     let factory = this._cmpFctryRslvr.resolveComponentFactory(type);
+     // vCref is needed cause of that injector..
+     let injector = ReflectiveInjector.fromResolvedProviders([], vCref.parentInjector);
+     // create component without adding it directly to the DOM
+     let comp = factory.create(injector);
+     return comp;
+   }
 
-  //Generates and returns an ArcModal from database[type], injecting it into vcRef
+  /**
+   * Generates, injects, and returns an ArcModal
+   * @param  {string}           type  Name of modal component type (such as "wizard"), as listed in ModalGeneratorService._modalDatabase
+   * @param  {ViewContainerRef} vcRef The ViewContainerRef into which the modal will be injected
+   * @return {ArcModal}               Newly generated ArcModal
+   */
   public generateModal (type : string, vcRef : ViewContainerRef) : ArcModal {
     if(this._modalDatabase[type] == undefined) {
       console.error('ModalGeneratorService does not have modal type "' + type + '" in its database"');

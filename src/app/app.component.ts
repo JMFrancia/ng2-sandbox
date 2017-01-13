@@ -1,4 +1,4 @@
-import { Component, ViewChild, ViewContainerRef, ElementRef, Input, Output, OnInit, ComponentRef, ComponentFactoryResolver, ReflectiveInjector } from '@angular/core';
+import { Component, ViewChild, ViewContainerRef, OnInit } from '@angular/core';
 import { ModalGeneratorService } from './arc-modal/modal-generator.service'
 import { ArcModal } from './arc-modal/arc-modal';
 
@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   formText : any;
   wizardModal : ArcModal;
 
-  constructor(private _mgService: ModalGeneratorService, private _cmpFctryRslvr: ComponentFactoryResolver, private _vcRef: ViewContainerRef) {}
+  constructor(private _mgService: ModalGeneratorService, private _vcRef: ViewContainerRef) {}
 
   ngOnInit() {
     this.wizardModal = this._mgService.generateModal("wizard", this._placeHolder);
