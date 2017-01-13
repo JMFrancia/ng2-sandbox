@@ -40,8 +40,7 @@ export class ModalGeneratorService {
     }
     let modalComponent = this.createComponent(this._modalDatabase[type], vcRef);
     vcRef.insert(modalComponent.hostView);
-    let newModal = new ArcModal(modalComponent, vcRef);
-    return newModal;
+    return new ArcModal(modalComponent, vcRef);
   }
 
 }
