@@ -1,9 +1,18 @@
 import { ViewContainerRef, ComponentRef } from '@angular/core';
 
+/**
+ * ArcModal object for use in main app
+ */
 export class ArcModal {
   private viewCRef : ViewContainerRef;
   private instance : any;
 
+  /**
+   * Constructor for ArcModal
+   * @param  {ComponentRef<any>} modal            Component reference for the modal
+   * @param  {ViewContainerRef}  viewContainerRef Reference to the view container the modal was injected into in ModalGeneratorService
+   * @return {[type]}                             Arcmodal object
+   */
   constructor(modal : ComponentRef<any>, viewContainerRef : ViewContainerRef) {
     this.viewCRef = viewContainerRef;
     this.instance = modal.instance;
