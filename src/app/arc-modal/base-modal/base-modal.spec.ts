@@ -4,7 +4,7 @@ import { ComponentFixture, TestBed, fakeAsync, inject, tick } from '@angular/cor
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import { Ng2Bs3ModalModule, ModalComponent } from './ng2-bs3-modal';
+import { BaseModalModule, ModalComponent } from './base-modal';
 import { createRoot, advance, ticks } from '../test/common';
 
 describe('ModalComponent', () => {
@@ -300,7 +300,7 @@ class RootComponent {
 }
 
 @NgModule({
-    imports: [RouterTestingModule, Ng2Bs3ModalModule, CommonModule],
+    imports: [RouterTestingModule, BaseModalModule, CommonModule],
     providers: [GlueService],
     declarations: [TestComponent, TestComponent2, RootComponent],
     exports: [TestComponent, TestComponent2, RootComponent]

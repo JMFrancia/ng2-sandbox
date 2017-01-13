@@ -10,8 +10,13 @@ export class BreadcrumbComponent implements OnInit {
   @Input() selectedIndex : number;
   @Output() selectionMade : any = new EventEmitter();
 
-  selected : any;
+  private selected : any;
 
+  /**
+   * Select breadcrumb option
+   * @param  {any}        option Option being selected
+   * @param  {boolean = true}    Flag set to true if event should be emitted for this selection
+   */
   selectOption(option: any, broadcastSelection: boolean = true) {
     if(this.selected === option || option.disabled)
       return;

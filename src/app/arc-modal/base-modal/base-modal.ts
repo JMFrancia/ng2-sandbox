@@ -32,5 +32,5 @@ export * from './components/modal-instance';
         AutofocusDirective
     ]
 })
-export class Ng2Bs3ModalModule {
+export class BaseModalModule {
 }

@@ -7,7 +7,7 @@ declare var jQuery: any;
 
 export class ModalInstance {
 
-    private suffix: string = '.ng2-bs3-modal';
+    private suffix: string = '.base-modal';
     private shownEventName: string = 'shown.bs.modal' + this.suffix;
     private hiddenEventName: string = 'hidden.bs.modal' + this.suffix;
     private $modal: any;
