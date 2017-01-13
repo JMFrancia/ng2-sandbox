@@ -47,7 +47,7 @@ export class ArcModal {
    * Returns the modal instance
    * @return {[type]} The modal instance object
    */
-  public getModalInstance() {
+  public getInstance() {
     return this.instance;
   }
 }

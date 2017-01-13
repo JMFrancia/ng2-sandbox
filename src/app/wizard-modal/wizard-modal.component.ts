@@ -10,6 +10,17 @@ export class WizardModalComponent {
 @ViewChild('breadcrumb') breadcrumb;
 @ViewChild('testForm') testForm;
 
+  /**
+   * Programatically set breadcrumb options
+   * @param  {any}    options An object in the form { {name : <option1 name>, disabled <true/false>}, {...}, etc.}
+   */
+  public setBreadcrumbOptions(options : Array<any>) {
+    this.breadcrumb.options = options;
+  }
+
+  /**
+   * Opens wizard modal
+   */
   public open() {
     this.modal.open();
   }
