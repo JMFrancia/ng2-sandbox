@@ -3,10 +3,6 @@ Arc Modal 1.0.0
 
 Angular2 Bootstrap3 Modal Component with generator service
 
-### Acknowledgements
-
-The base-modal module used in Arc Modal is `ng2-bs3-modal` created by Doug Ludlow, which can be found at [this repository](https://github.com/dougludlow/ng2-bs3-modal). It was renamed base-modal as part of this project for clarity.
-
 ## Prerequisites
 
 If you're using Typescript in your project, `arc-modal` requires Typescript v2.0.0 or greater. Also make sure that your editor (Visual Studio Code, Atom, Webstorm, etc.) supports Typescript >= v2.0.0 or you'll see errors even though it compiles.
@@ -409,7 +405,11 @@ export class AppComponent implements OnInit {
      </modal-body>
      <modal-footer [show-default-buttons]="true"></modal-footer>
  </modal>
+```
 
+# Acknowledgements
+
+The base-modal module used in Arc Modal is `ng2-bs3-modal` created by Doug Ludlow, which can be found at [this repository](https://github.com/dougludlow/ng2-bs3-modal). It was renamed base-modal as part of this project for clarity.
 
 # Sandbox
 
