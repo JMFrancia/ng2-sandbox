@@ -187,6 +187,7 @@ export class AppComponent implements OnInit {
     console.log("App-level logging: " + output);
   }
 }
+```
 
 ## API
 
