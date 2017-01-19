@@ -22,6 +22,8 @@ All three can be included in app.component.html like so:
 ## TODO
 
 - Create AttachInput function for ArcModal in order to attach custom input data to nested components within a service-generated modal
+- Make modals draggable
+- Make modals resizable
 
 ## Instructions
 
