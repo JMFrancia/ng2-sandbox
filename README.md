@@ -1,7 +1,11 @@
-# Arc-Modal
+# Arc Modal
 Arc Modal 1.0.0
 
 Angular2 Bootstrap3 Modal Component with generator service
+
+# Acknowledgements
+
+The base-modal module used in Arc Modal is `ng2-bs3-modal` created by Doul Ludlow, which can be found at [this repository](https://github.com/dougludlow/ng2-bs3-modal). It was renamed base-modal as part of this project for clarity.
 
 ## Prerequisites
 
@@ -9,7 +13,7 @@ If you're using Typescript in your project, `arc-modal` requires Typescript v2.0
 
 ## Dependencies
 
-`arc-modal` depends on `bootstrap` which depends on `jquery`, you'll need to include both scripts or somehow make them available globally, depending on your build system. You will also need to link to the `bootstrap` style configuration.
+`arc-modal` depends on `bootstrap` which depends on `jquery`, you'll need to include both scripts before `ng2-bs3-modal` or somehow make them available globally, depending on your build system. You will also need to link to the `bootstrap` style configuration.
 
 All three can be included in app.component.html like so:
 
@@ -91,6 +95,7 @@ export class ModalDatabase {
   //Other functions redacted for brevity
 }
 ```
+
 ### Example: Using the Modal Generator Service
 
 1. Add a template tag with a reference attached in your app's template. This will be the modal's placeholder.
@@ -145,6 +150,7 @@ export class AppComponent implements OnInit {
   }
 }
 ```
+
 ### Example: Attaching a callback function to a nested component within the modal, so that it can send data up to the app
 
 Use the ArcModal's attachCallback function.
@@ -184,7 +190,7 @@ export class AppComponent implements OnInit {
     console.log("App-level logging: " + output);
   }
 }
-```
+
 ## API
 
 ### ModalGenerator Service Methods
@@ -305,6 +311,8 @@ export class AppComponent implements OnInit {
  </modal>
  ```
 
+ ![Example](demo/images/modal.png)
+
  ### Static modal
 
  This will create a modal that cannot be closed with the escape key or by clicking outside of the modal.
@@ -401,19 +409,3 @@ export class AppComponent implements OnInit {
      </modal-body>
      <modal-footer [show-default-buttons]="true"></modal-footer>
  </modal>
-```
-
-# Sandbox
-
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.22-1.
-
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
