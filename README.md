@@ -134,7 +134,6 @@ import { ArcModal } from './arc-modal/arc-modal';
 export class AppComponent implements OnInit {
   @ViewChild('modalPlaceholder', {read: ViewContainerRef}) private _placeHolder: ViewContainerRef;
 
-  formText : any;
   myCustomModal : ArcModal;
 
   constructor(private _mgService: ModalGeneratorService, private _vcRef: ViewContainerRef) {}
