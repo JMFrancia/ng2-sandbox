@@ -70,7 +70,9 @@ export class MyCustomModalComponent {
   }
 
 }
+```
 
+```typescript
 //modal-database.ts
 
 import { Type, Component } from '@angular/core';
@@ -88,7 +90,7 @@ export class ModalDatabase {
 
   //Other functions redacted for brevity
 }
-
+```
 ### Example: Using the Modal Generator Service
 
 1. Add a template tag with a reference attached in your app's template. This will be the modal's placeholder.
