@@ -308,8 +308,7 @@ export class AppComponent implements OnInit {
      <modal-footer [show-default-buttons]="true"></modal-footer>
  </modal>
  ```
-
- ![Example](demo/images/modal.png)
+ 
 
  ### Static modal
 
