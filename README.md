@@ -32,7 +32,7 @@ All three can be included in app.component.html like so:
 1. Generate a new component within src/app/arc-modal/custom-modals.
 2. In the template, use the modal, modal-header, modal-body, and modal-footer directives to design your modal.
 3. In the controller, be sure to add a ViewChild for the modal, and also one for any component nested in the modal that you want to communicate with the app outside the modal.
-4. Add an open() function which calls the open() function of your ViewChild modal variable 
+4. Add an open() function which calls the open() function of your ViewChild modal variable
 4. Add your modal's name and Component to src/app/arc-modal/custom-modals/modal-database
 
 ```html
@@ -101,7 +101,7 @@ export class ModalDatabase {
 3. Create a ViewContainerRef variable with the viewchild decorator, connecting it to the template tag reference
 from step 1
 3. Use the generator's generateModal method to create your modal, feeding it the modal type (that you used
-as a key in the modal database), and the ViewContainerRef variable you created in step 2
+as a key in the modal database), and the ViewContainerRef variable you created in step 3
 4. (Optional) Create a function to open your modal using ArcModal's open() method, so that you can open the modal from
 a button in the template
 
