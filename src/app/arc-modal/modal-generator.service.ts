@@ -2,9 +2,7 @@ import { Injectable, ViewChild, ViewContainerRef, ElementRef,
          EventEmitter, OnInit, ComponentRef, ComponentFactoryResolver,
          Component, Type, ReflectiveInjector } from '@angular/core';
 import { ArcModal } from './arc-modal';
-import { ModalDatabase } from './modal-database'
-
-import { WizardModalComponent } from './wizard-modal/wizard-modal.component'
+import { ModalDatabase } from './custom-modals/modal-database'
 
 
 @Injectable()

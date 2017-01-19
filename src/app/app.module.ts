@@ -8,7 +8,7 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 import { BaseModalModule } from './arc-modal/base-modal/base-modal';
 import { ModalTestFormComponent } from './modal-test-form/modal-test-form.component';
-import { WizardModalComponent } from './arc-modal/wizard-modal/wizard-modal.component';
+import { WizardModalComponent } from './arc-modal/custom-modals/wizard-modal/wizard-modal.component';
 
 @NgModule({
   declarations: [
