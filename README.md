@@ -144,7 +144,7 @@ export class AppComponent implements OnInit {
     this.myCustomModal.open();
   }
 }
-
+```
 ### Example: Attaching a callback function to a nested component within the modal, so that it can send data up to the app
 
 Use the ArcModal's attachCallback function.
@@ -184,7 +184,7 @@ export class AppComponent implements OnInit {
     console.log("App-level logging: " + output);
   }
 }
-
+```
 ## API
 
 ### ModalGenerator Service Methods
