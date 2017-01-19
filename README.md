@@ -305,8 +305,6 @@ export class AppComponent implements OnInit {
  </modal>
  ```
 
- ![Example](demo/images/modal.png)
-
  ### Static modal
 
  This will create a modal that cannot be closed with the escape key or by clicking outside of the modal.
