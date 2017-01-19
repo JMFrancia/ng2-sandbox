@@ -3,9 +3,9 @@ Arc Modal 1.0.0
 
 Angular2 Bootstrap3 Modal Component with generator service
 
-# Acknowledgements
+### Acknowledgements
 
-The base-modal module used in Arc Modal is `ng2-bs3-modal` created by Doul Ludlow, which can be found at [this repository](https://github.com/dougludlow/ng2-bs3-modal). It was renamed base-modal as part of this project for clarity.
+The base-modal module used in Arc Modal is `ng2-bs3-modal` created by Doug Ludlow, which can be found at [this repository](https://github.com/dougludlow/ng2-bs3-modal). It was renamed base-modal as part of this project for clarity.
 
 ## Prerequisites
 
@@ -409,3 +409,19 @@ export class AppComponent implements OnInit {
      </modal-body>
      <modal-footer [show-default-buttons]="true"></modal-footer>
  </modal>
+
+
+# Sandbox
+
+This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.22-1.
+
+## Development server
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Code scaffolding
+
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class`.
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
