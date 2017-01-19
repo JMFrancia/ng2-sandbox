@@ -195,7 +195,7 @@ export class AppComponent implements OnInit {
 
 - `generateModal (type : string, vcRef : ViewContainerRef) : ArcModal`
 
-  Generates a modal of type 'type' (as defined in arc-modal/modal-generator/modal-database.ts), and injects it into vcRef. Returns the ArcModal object.
+  Generates a modal of type 'type' (as defined in src/app/arc-modal/custom-modals/modal-database.ts), and injects it into vcRef. Returns the ArcModal object.
 
 ### ArcModal Object Methods
 
