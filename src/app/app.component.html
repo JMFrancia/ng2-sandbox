@@ -1,34 +1,14 @@
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css">
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.0/es6-shim.min.js"></script>
-  <script src="https://unpkg.com/zone.js@0.6.21?main=browser"></script>
-  <script src="https://unpkg.com/reflect-metadata@0.1.3"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.38/system.js"></script>
-  <script src="https://unpkg.com/typescript@2.0.0/lib/typescript.js"></script>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.js"></script>
 </head>
 <body>
-  <h1>Breadcrumb</h1>
-  <app-breadcrumb
-    [options]="[
-      {name: 'Option 1', disabled: false},
-      {name: 'Option 2', disabled: false},
-      {name: 'Option 3', disabled: true}
-    ]"
-    [selectedIndex]="0"
-    (selectionMade)="logOutput($event)"
-  ></app-breadcrumb>
   <h1>Modal</h1>
-
   <button (click)="openWizardModal()">Open Modal</button>
-  <template #modalPlaceholder></template>
 
-  <!--
-  <button type="button" class="btn btn-default" (click)="modal.open()">Open me!</button>
--->
+  <!-- Modal placeholder-->
+  <template #modalPlaceholder></template>
 
   <div>
     {{formText}}

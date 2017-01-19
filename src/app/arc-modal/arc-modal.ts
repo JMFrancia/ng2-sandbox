@@ -47,7 +47,15 @@ export class ArcModal {
    * Returns the modal instance
    * @return {[type]} The modal instance object
    */
-  public getInstance() {
+  public getInstance() : ComponentRef<any> {
     return this.instance;
+  }
+
+  /**
+   * Returns the view container reference object
+   * @return ViewContainerRef the view container reference object
+   */
+  public getViewContainerRef() : ViewContainerRef {
+    return this.viewCRef;
   }
 }

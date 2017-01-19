@@ -2,13 +2,13 @@ import { Injectable, ViewChild, ViewContainerRef, ElementRef,
          EventEmitter, OnInit, ComponentRef, ComponentFactoryResolver,
          Component, Type, ReflectiveInjector } from '@angular/core';
 import { ArcModal } from './arc-modal';
+import { ModalDatabase } from './modal-database'
+
 import { WizardModalComponent } from './wizard-modal/wizard-modal.component'
+
 
 @Injectable()
 export class ModalGeneratorService {
-  private _modalDatabase : any = {
-    "wizard" : WizardModalComponent
-  }
 
   constructor(private _cmpFctryRslvr: ComponentFactoryResolver, private _vcRef: ViewContainerRef) {}
 
@@ -34,12 +34,16 @@ export class ModalGeneratorService {
    * @return {ArcModal}               Newly generated ArcModal
    */
   public generateModal (type : string, vcRef : ViewContainerRef) : ArcModal {
-    if(this._modalDatabase[type] == undefined) {
-      console.error('ModalGeneratorService does not have modal type "' + type + '" in its database"');
+    //Retrieve the modal component from the modal database
+    let modalComponentType = ModalDatabase.get(type);
+    if(modalComponentType == null)
       return null;
-    }
-    let modalComponent = this.createComponent(this._modalDatabase[type], vcRef);
+
+    //Generate and inject the component in the vcRef
+    let modalComponent = this.createComponent(modalComponentType, vcRef);
     vcRef.insert(modalComponent.hostView);
+
+    //Return an ArcModal object
     return new ArcModal(modalComponent, vcRef);
   }
 
